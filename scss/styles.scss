@@ -30,11 +30,12 @@ li {
     display: flex;
     flex-direction: column;
     nav {
-      margin-top: 48px;
-      margin-left: 24px;
+      padding-left: 24px;
+      padding-right: 44px;
+      height: 110px;
       display: flex;
       align-items: center;
-      padding-right: 44px;
+      z-index: 100;
       .menu {
         background: none;
         outline: none;
@@ -67,6 +68,10 @@ li {
       }
       ul {
         display: none;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 13px;
+        letter-spacing: -0.5px;
         @include _768 {
           display: flex;
         }
