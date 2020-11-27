@@ -1,0 +1,161 @@
+@import "fontsAndColours";
+@import "media-queries";
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  background-color: $white;
+}
+li {
+  list-style-type: none;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  .main-block {
+    position: relative;
+    height: 360px;
+    background-image: url(/images/mobile-image-hero-1.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: flex;
+    flex-direction: column;
+    nav {
+      margin-top: 48px;
+      margin-left: 24px;
+      display: flex;
+      align-items: center;
+      padding-right: 44px;
+      .menu {
+        background: none;
+        outline: none;
+        border: none;
+        position: relative;
+        height: 14px;
+        width: 20px;
+        div {
+          background-color: $white;
+          width: 20px;
+          height: 2px;
+          position: absolute;
+          &:nth-child(1) {
+            top: 0px;
+          }
+          &:nth-child(2) {
+            top: 6px;
+          }
+          &:nth-child(3) {
+            top: 12px;
+          }
+        }
+      }
+      .logo {
+        margin-left: auto;
+        margin-right: auto;
+        @include _768 {
+          margin-left: 0;
+        }
+      }
+      ul {
+        display: none;
+        @include _768 {
+          display: flex;
+        }
+        li {
+          margin-left: 32px;
+        }
+      }
+    }
+    .switch {
+      margin-top: auto;
+      margin-left: auto;
+      display: flex;
+      width: 112px;
+      button {
+        outline: none;
+        border: none;
+        background-color: $black;
+        height: 56px;
+        width: 56px;
+        &:hover {
+          background-color: $very-dark-gray;
+        }
+      }
+    }
+  }
+  .container {
+    height: 100%;
+    width: 100%;
+    padding: 72px 32px;
+    overflow: hidden;
+    .title {
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 31px;
+      letter-spacing: -1.16667px;
+      margin-bottom: 14px;
+    }
+    .description {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 167%;
+      letter-spacing: -0.25px;
+      margin-bottom: 52px;
+      color: $dark-gray;
+    }
+    button {
+      display: flex;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      p {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 133%;
+        letter-spacing: 10px;
+        margin-right: 43px;
+      }
+    }
+  }
+  #discover {
+    display: block;
+  }
+  #available {
+    display: none;
+  }
+  #manufactured {
+    display: none;
+  }
+  .product-image {
+    overflow: hidden;
+    img {
+      max-width: 100vw;
+    }
+  }
+  .tertiary-block {
+    padding: 56px 32px;
+    .about {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 183%;
+      text-align: justify;
+      letter-spacing: 5px;
+      margin-bottom: 9px;
+    }
+    .description {
+      margin-bottom: 0;
+    }
+  }
+}

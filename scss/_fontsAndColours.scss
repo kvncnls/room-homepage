@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap");
+
+$main-font: "Spartan", sans-serif;
+$secondary-font: roboto, sans-serif;
+$dark-gray: hsl(0, 0%, 63%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$very-dark-gray: hsl(0, 0%, 27%);
+
+html {
+  font-family: $main-font;
+  font-size: 12px;
+  color: $black;
+}
+
+.underline {
+  text-decoration: underline;
+}
