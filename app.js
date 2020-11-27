@@ -7,41 +7,25 @@ const logo = document.querySelector(".logo");
 const navList = document.querySelector(".nav-list");
 
 menuBtn.addEventListener("click", () => {
-  const showMenu = gsap.timeline();
-  showMenu
-    .fromTo(
-      nav,
-      {
-        backgroundColor: "transparent",
-      },
-      {
-        backgroundColor: "#fff",
-      }
-    )
-    .fromTo(
-      logo,
-      {
-        display: "block",
-      },
-      {
-        display: "none",
-      }
-    )
-    .fromTo(
-      navList,
-      {
-        display: "none",
-      },
-      {
-        display: "flex",
-      }
-    );
-
   if (!menuBtn.classList.contains("opened")) {
     menuBtn.classList.add("opened");
-    showMenu.play();
+    showMenu();
   } else if (menuBtn.classList.contains("opened")) {
     menuBtn.classList.remove("opened");
-    showMenu.reverse();
+    closeMenu();
   }
 });
+
+function showMenu() {
+  nav.style.backgroundColor = "#fff";
+  logo.style.display = "none";
+  navList.style.display = "flex";
+  menuBtn.classList.add("menu-x");
+}
+
+function closeMenu() {
+  nav.style.backgroundColor = "transparent";
+  logo.style.display = "block";
+  navList.style.display = "none";
+  menuBtn.classList.remove("menu-x");
+}

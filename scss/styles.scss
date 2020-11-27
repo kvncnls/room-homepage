@@ -36,6 +36,7 @@ li {
       display: flex;
       align-items: center;
       z-index: 100;
+      transition: all 150ms ease-in;
       .menu {
         background: none;
         outline: none;
@@ -48,6 +49,7 @@ li {
           width: 20px;
           height: 2px;
           position: absolute;
+          transition: all 250ms ease-in;
           &:nth-child(1) {
             top: 0px;
           }
@@ -56,6 +58,24 @@ li {
           }
           &:nth-child(3) {
             top: 12px;
+          }
+        }
+      }
+      .menu.menu-x {
+        height: 14px;
+        div {
+          background-color: $black;
+          &:nth-child(1) {
+            transform: rotate(45deg);
+            top: 6px;
+          }
+          &:nth-child(2) {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: rotate(-45deg);
+            top: 6px;
           }
         }
       }
@@ -73,12 +93,19 @@ li {
         font-size: 12px;
         line-height: 13px;
         letter-spacing: -0.5px;
+        margin-left: auto;
         @include _768 {
           display: flex;
         }
         li {
-          color: black;
+          color: $black;
           margin-left: 32px;
+          @include _768 {
+            color: $white;
+          }
+          &:nth-child(1) {
+            margin-left: 0px;
+          }
         }
       }
     }
