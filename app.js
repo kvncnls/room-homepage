@@ -46,42 +46,43 @@ const imageDiv = document.querySelector(".main-block__image");
 const image = document.querySelector(".main-block__image img");
 const prevBtn = document.querySelector(".switch__previous");
 const nextBtn = document.querySelector(".switch__next");
+
 let imgNo = 1;
+let prefix = "mobile-";
 
 console.log(imageDiv);
 console.log(image);
 
 prevBtn.addEventListener("click", () => {
-  /* If media query exceeds 410px,
-  use desktop image */
-  if (window.innerWidth > 410) {
-    console.log("Greater than 410");
-  } else {
-    console.log("Less than 410");
-  }
-
   if (imgNo <= 1) {
     imgNo = 3;
   } else {
     imgNo -= 1;
   }
   console.log(imgNo);
+  if (window.innerWidth > 410) {
+    console.log("Greater than 410");
+    prefix = "desktop-";
+    console.log(`${prefix}${imgNo}`);
+  } else {
+    console.log("Less than 410");
+    console.log(`${prefix}${imgNo}`);
+  }
 });
 
 nextBtn.addEventListener("click", () => {
-  /* If media query exceeds 410px,
-  use desktop image */
-
-  if (window.innerWidth > 410) {
-    console.log("Greater than 410");
-  } else {
-    console.log("Less than 410");
-  }
-
   if (imgNo >= 3) {
     imgNo = 1;
   } else {
     imgNo += 1;
   }
   console.log(imgNo);
+  if (window.innerWidth > 410) {
+    console.log("Greater than 410");
+    prefix = "desktop-";
+    console.log(`${prefix}${imgNo}`);
+  } else {
+    console.log("Less than 410");
+    console.log(`${prefix}${imgNo}`);
+  }
 });
