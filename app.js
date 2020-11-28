@@ -48,7 +48,7 @@ const prevBtn = document.querySelector(".switch__previous");
 const nextBtn = document.querySelector(".switch__next");
 
 let imgNo = 1;
-let prefix = "mobile-";
+let prefix;
 
 console.log(imageDiv);
 console.log(image);
@@ -62,10 +62,11 @@ prevBtn.addEventListener("click", () => {
   console.log(imgNo);
   if (window.innerWidth > 410) {
     console.log("Greater than 410");
-    prefix = "desktop-";
+    prefix = "desktop-image-hero-";
     console.log(`${prefix}${imgNo}`);
   } else {
     console.log("Less than 410");
+    prefix = "mobile-image-hero-";
     console.log(`${prefix}${imgNo}`);
   }
 });
@@ -79,10 +80,11 @@ nextBtn.addEventListener("click", () => {
   console.log(imgNo);
   if (window.innerWidth > 410) {
     console.log("Greater than 410");
-    prefix = "desktop-";
+    prefix = "desktop-image-hero-";
     console.log(`${prefix}${imgNo}`);
   } else {
     console.log("Less than 410");
+    prefix = "mobile-image-hero-";
     console.log(`${prefix}${imgNo}`);
   }
 });
