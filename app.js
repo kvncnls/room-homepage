@@ -5,8 +5,6 @@ const nav = document.querySelector("nav");
 const logo = document.querySelector(".logo");
 const navList = document.querySelector(".nav-list");
 const darkOverlay = document.querySelector(".dark-overlay");
-const switchPrev = document.querySelector(".switch__previous");
-const switchNext = document.querySelector(".switch__next");
 
 /* Navbar Animations Starts */
 menuBtn.addEventListener("click", () => {
@@ -42,24 +40,48 @@ darkOverlay.addEventListener("click", () => {
   closeMenu();
 });
 
-/* Navbar Animations Ends */
-
-switchPrev.addEventListener("click", () => {
-  /* If discover is displayed */
-  /* Show manufactured */
-  /* If manufactured is displayed */
-  /* Show available */
-  /* If available is displayed */
-  /* Show discover */
-});
-
-switchNext.addEventListener("click", () => {
-  /* If discover is displayed */
-  /* Show available */
-  /* If available is displayed */
-  /* Show manufactured */
-  /* If manufactured is displayed */
-  /* Show discover */
-});
-
 /* Next / Previous Buttons */
+
+const imageDiv = document.querySelector(".main-block__image");
+const image = document.querySelector(".main-block__image img");
+const prevBtn = document.querySelector(".switch__previous");
+const nextBtn = document.querySelector(".switch__next");
+let imgNo = 1;
+
+console.log(imageDiv);
+console.log(image);
+
+prevBtn.addEventListener("click", () => {
+  /* If media query exceeds 410px,
+  use desktop image */
+  if (window.innerWidth > 410) {
+    console.log("Greater than 410");
+  } else {
+    console.log("Less than 410");
+  }
+
+  if (imgNo <= 1) {
+    imgNo = 3;
+  } else {
+    imgNo -= 1;
+  }
+  console.log(imgNo);
+});
+
+nextBtn.addEventListener("click", () => {
+  /* If media query exceeds 410px,
+  use desktop image */
+
+  if (window.innerWidth > 410) {
+    console.log("Greater than 410");
+  } else {
+    console.log("Less than 410");
+  }
+
+  if (imgNo >= 3) {
+    imgNo = 1;
+  } else {
+    imgNo += 1;
+  }
+  console.log(imgNo);
+});

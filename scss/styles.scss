@@ -34,7 +34,7 @@ li {
   .main-block {
     position: relative;
     height: 360px;
-    img {
+    &__image {
       position: absolute;
     }
     nav {
@@ -79,7 +79,8 @@ li {
             top: 6px;
           }
           &:nth-child(2) {
-            transform: translateX(-50px);
+            transform: translateX(-100px);
+            background-color: $black;
             opacity: 0;
           }
           &:nth-child(3) {
