@@ -36,6 +36,12 @@ function closeMenu() {
   darkOverlay.style.height = "0vh";
   darkOverlay.style.width = "0vw";
 }
+
+darkOverlay.addEventListener("click", () => {
+  menuBtn.classList.remove("opened");
+  closeMenu();
+});
+
 /* Navbar Animations Ends */
 
 switchPrev.addEventListener("click", () => {
