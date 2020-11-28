@@ -17,9 +17,19 @@ li {
   list-style-type: none;
 }
 
+.dark-overlay {
+  position: absolute;
+  background-color: $black;
+  opacity: 0.5;
+  z-index: 2;
+  pointer-events: none;
+  max-height: 1538px;
+}
+
 .flexbox {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   .main-block {
     position: relative;
     height: 360px;
@@ -29,6 +39,9 @@ li {
     background-position: top left;
     display: flex;
     flex-direction: column;
+    @include _480 {
+      background-image: url(/images/desktop-image-hero-1.jpg);
+    }
     nav {
       padding-left: 24px;
       padding-right: 44px;
@@ -63,8 +76,9 @@ li {
       }
       .menu.menu-x {
         height: 14px;
+        z-index: 200;
         div {
-          background-color: $black;
+          background-color: $dark-gray;
           &:nth-child(1) {
             transform: rotate(45deg);
             top: 6px;
