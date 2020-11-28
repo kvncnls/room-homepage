@@ -50,8 +50,12 @@ const nextBtn = document.querySelector(".switch__next");
 let imgNo = 1;
 let prefix;
 
-console.log(imageDiv);
-console.log(image);
+/* Create a window width detector that checks if the width is less than 410. If less than 410, use the mobile prefix.
+Otherwise, use the desktop prefix.
+
+Make this detector check for window size changes.**** */
+/* Maybe use GSAP for window size changes? */
+/* Use GSAP's mediaMatch */
 
 prevBtn.addEventListener("click", () => {
   if (imgNo <= 1) {
@@ -59,16 +63,17 @@ prevBtn.addEventListener("click", () => {
   } else {
     imgNo -= 1;
   }
-  console.log(imgNo);
   if (window.innerWidth > 410) {
-    console.log("Greater than 410");
-    prefix = "desktop-image-hero-";
-    console.log(`${prefix}${imgNo}`);
+    prefix = "/images/desktop-image-hero-";
+    image.src = `${prefix}${imgNo}.jpg`;
   } else {
-    console.log("Less than 410");
-    prefix = "mobile-image-hero-";
-    console.log(`${prefix}${imgNo}`);
+    prefix = "/images/mobile-image-hero-";
+    image.src = `${prefix}${imgNo}.jpg`;
   }
+  /* Create imgNo --> Copy change */
+  /* If 1, dsicover */
+  /* If 2, available */
+  /* If 3, manufacture */
 });
 
 nextBtn.addEventListener("click", () => {
@@ -77,14 +82,15 @@ nextBtn.addEventListener("click", () => {
   } else {
     imgNo += 1;
   }
-  console.log(imgNo);
   if (window.innerWidth > 410) {
-    console.log("Greater than 410");
-    prefix = "desktop-image-hero-";
-    console.log(`${prefix}${imgNo}`);
+    prefix = "/images/desktop-image-hero-";
+    image.src = `${prefix}${imgNo}.jpg`;
   } else {
-    console.log("Less than 410");
-    prefix = "mobile-image-hero-";
-    console.log(`${prefix}${imgNo}`);
+    prefix = "/images/mobile-image-hero-";
+    image.src = `${prefix}${imgNo}.jpg`;
   }
+  /* Create imgNo --> Copy change */
+  /* If 1, dsicover */
+  /* If 2, available */
+  /* If 3, manufacture */
 });
