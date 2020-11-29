@@ -42,51 +42,10 @@ darkOverlay.addEventListener("click", () => {
 
 /* Next / Previous Buttons */
 
-const imageDiv = document.querySelector(".main-block__image");
 const carouselImages = Array.from(document.querySelectorAll(".carousel-img"));
 const prevBtn = document.querySelector(".switch__previous");
 const nextBtn = document.querySelector(".switch__next");
 const copy = document.querySelector(".copy");
-
-let imgNo = 0;
-
-function previousImage() {
-  if (imgNo === 0) {
-    imgNo = 3;
-  }
-}
-
-prevBtn.addEventListener("click", () => {
-  if (imgNo == 0) {
-    imgNo = 3;
-  }
-  console.log(carouselImages[imgNo % carouselImages.length].classList);
-  carouselImages[imgNo % carouselImages.length].classList.replace(
-    "show-img",
-    "hide-img"
-  );
-  carouselImages[(imgNo - 1) % carouselImages.length].classList.replace(
-    "hide-img",
-    "show-img"
-  );
-  imgNo -= 1;
-});
-
-nextBtn.addEventListener("click", () => {
-  if (imgNo == 3) {
-    imgNo = 0;
-  }
-  console.log(carouselImages[imgNo % carouselImages.length].classList);
-  carouselImages[imgNo % carouselImages.length].classList.replace(
-    "show-img",
-    "hide-img"
-  );
-  carouselImages[(imgNo + 1) % carouselImages.length].classList.replace(
-    "hide-img",
-    "show-img"
-  );
-  imgNo += 1;
-});
 
 let discoverText = {
   heading: "Discover innovative ways to decorate.",
@@ -107,3 +66,47 @@ let manufactureText = {
 };
 
 let textArray = [discoverText, availabilityText, manufactureText];
+
+let imgNo = 0;
+
+prevBtn.addEventListener("click", () => {
+  if (imgNo == 0) {
+    imgNo = 3;
+  }
+  carouselImages[imgNo % carouselImages.length].classList.replace(
+    "show-img",
+    "hide-img"
+  );
+  carouselImages[(imgNo - 1) % carouselImages.length].classList.replace(
+    "hide-img",
+    "show-img"
+  );
+
+  copy.firstElementChild.textContent =
+    textArray[imgNo % textArray.length].heading;
+  copy.lastElementChild.textContent =
+    textArray[imgNo % textArray.length].description;
+
+  imgNo -= 1;
+});
+
+nextBtn.addEventListener("click", () => {
+  if (imgNo == 3) {
+    imgNo = 0;
+  }
+  carouselImages[imgNo % carouselImages.length].classList.replace(
+    "show-img",
+    "hide-img"
+  );
+  carouselImages[(imgNo + 1) % carouselImages.length].classList.replace(
+    "hide-img",
+    "show-img"
+  );
+
+  copy.firstElementChild.textContent =
+    textArray[imgNo % textArray.length].heading;
+  copy.lastElementChild.textContent =
+    textArray[imgNo % textArray.length].description;
+
+  imgNo += 1;
+});

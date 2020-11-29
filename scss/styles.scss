@@ -49,12 +49,10 @@ li {
         .show-img {
           opacity: 1;
           display: initial;
-          transform: scale(1);
         }
         .hide-img {
           opacity: 0;
           display: hidden;
-          transform: scale(1.5);
         }
       }
     }
