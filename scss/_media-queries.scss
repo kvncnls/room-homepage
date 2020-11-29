@@ -10,8 +10,8 @@
 }
 
 /*########### Most Phones ###########*/
-@mixin _400 {
-  @media screen and (min-width: 400px) {
+@mixin _411 {
+  @media screen and (min-width: 411px) {
     @content;
   }
 }

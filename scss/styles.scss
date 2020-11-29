@@ -35,7 +35,28 @@ li {
     position: relative;
     height: 360px;
     &__image {
-      position: absolute;
+      position: relative;
+      picture {
+        position: absolute;
+        top: 0;
+        left: 0;
+        .carousel-img {
+          display: block;
+          width: 100%;
+          object-fit: cover;
+          transition: all 1s;
+        }
+        .show-img {
+          opacity: 1;
+          display: initial;
+          transform: scale(1);
+        }
+        .hide-img {
+          opacity: 0;
+          display: hidden;
+          transform: scale(1.5);
+        }
+      }
     }
     nav {
       position: relative;
@@ -172,15 +193,6 @@ li {
         margin-right: 43px;
       }
     }
-  }
-  #discover {
-    display: block;
-  }
-  #available {
-    display: none;
-  }
-  #manufactured {
-    display: none;
   }
   .product-image {
     overflow: hidden;
