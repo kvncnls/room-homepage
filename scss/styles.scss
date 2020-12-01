@@ -41,6 +41,7 @@ button {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  position: relative;
 
   .flex-block {
     display: flex;
@@ -220,6 +221,10 @@ button {
       padding: 72px 32px;
       overflow: hidden;
       max-width: 100%;
+      @include _1440 {
+        padding-left: 100px;
+        padding-top: 120px;
+      }
       .copy {
         margin-left: auto;
         margin-right: auto;
@@ -234,7 +239,10 @@ button {
           letter-spacing: -1.16667px;
           margin-bottom: 14px;
           @include _1024 {
+            font-weight: 600;
             font-size: 40px;
+            line-height: 45px;
+            letter-spacing: -1.66667px;
           }
         }
         .description {
@@ -273,10 +281,12 @@ button {
     }
     .tertiary-block {
       padding: 56px 32px;
+      width: 100%;
       @include _1024 {
         padding-top: 0;
         padding-bottom: 0%;
         flex-shrink: 1;
+        max-width: 580px;
       }
       .about {
         font-style: normal;
