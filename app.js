@@ -19,21 +19,29 @@ menuBtn.addEventListener("click", () => {
 });
 
 function showMenu() {
-  nav.style.backgroundColor = "#fff";
+  nav.style.backgroundColor = "rgba(255,255,255,1)";
   logo.style.display = "none";
   navList.style.display = "flex";
   menuBtn.classList.add("menu-x");
   darkOverlay.style.height = "200vh";
   darkOverlay.style.width = "100vw";
+  darkOverlay.style.display = "block";
 }
 
 function closeMenu() {
-  nav.style.backgroundColor = "transparent";
+  nav.style.backgroundColor = "rgba(255,255,255,0)";
   logo.style.display = "block";
   navList.style.display = "none";
   menuBtn.classList.remove("menu-x");
   darkOverlay.style.height = "0vh";
   darkOverlay.style.width = "0vw";
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 640) {
+      navList.style.display = "flex";
+      darkOverlay.style.display = "none";
+      console.log("Greater than 640px inside Close");
+    }
+  });
 }
 
 darkOverlay.addEventListener("click", () => {
@@ -42,9 +50,12 @@ darkOverlay.addEventListener("click", () => {
 });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth === 640) {
-    console.log(window.innerWidth);
+  if (window.innerWidth > 640) {
+    console.log("Greater than 640px");
+  } else {
+    console.log("Less than 640");
   }
+  closeMenu();
 });
 
 listItems.forEach((item) => {
