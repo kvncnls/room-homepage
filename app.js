@@ -40,6 +40,12 @@ darkOverlay.addEventListener("click", () => {
   closeMenu();
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth === 640) {
+    console.log(window.innerWidth);
+  }
+});
+
 /* Next / Previous Buttons */
 
 const carouselImages = Array.from(document.querySelectorAll(".carousel-img"));
