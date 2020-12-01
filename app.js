@@ -90,7 +90,7 @@ prevBtn.addEventListener("click", () => {
 
   copy.firstElementChild.textContent =
     textArray[imgNo % textArray.length].heading;
-  copy.lastElementChild.textContent =
+  copy.firstElementChild.nextElementSibling.textContent =
     textArray[imgNo % textArray.length].description;
 
   imgNo -= 1;
@@ -111,7 +111,7 @@ nextBtn.addEventListener("click", () => {
 
   copy.firstElementChild.textContent =
     textArray[imgNo % textArray.length].heading;
-  copy.lastElementChild.textContent =
+  copy.firstElementChild.nextElementSibling.textContent =
     textArray[imgNo % textArray.length].description;
 
   imgNo += 1;
