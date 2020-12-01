@@ -233,6 +233,9 @@ button {
           line-height: 31px;
           letter-spacing: -1.16667px;
           margin-bottom: 14px;
+          @include _1024 {
+            font-size: 40px;
+          }
         }
         .description {
           font-weight: 500;
@@ -292,6 +295,7 @@ button {
         max-width: 420px;
         margin-left: auto;
         margin-right: auto;
+        color: $dark-gray;
       }
     }
   }
