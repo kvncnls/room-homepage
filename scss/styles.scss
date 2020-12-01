@@ -21,6 +21,12 @@ li {
   list-style-type: none;
 }
 
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .dark-overlay {
   position: absolute;
   top: 0;
@@ -149,13 +155,40 @@ li {
             display: flex;
           }
           li {
-            color: $black;
+            position: relative;
             margin-left: 32px;
-            @include _640 {
-              color: $white;
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -10px;
+              transform: translate(-50%);
+              left: 50%;
+              width: 10px;
+              height: 2px;
+              background-color: black;
+              transition: all 150ms;
+              opacity: 0;
+              @include _640 {
+                background-color: white;
+              }
+            }
+            &:hover {
+              &::after {
+                width: 20px;
+                opacity: 1;
+                @include _640 {
+                  background-color: white;
+                }
+              }
             }
             &:nth-child(1) {
               margin-left: 0px;
+            }
+            a {
+              color: $black;
+              @include _640 {
+                color: $white;
+              }
             }
           }
         }

@@ -4,6 +4,7 @@ const menuBtn = document.querySelector(".menu");
 const nav = document.querySelector("nav");
 const logo = document.querySelector(".logo");
 const navList = document.querySelector(".nav-list");
+const listItems = document.querySelectorAll(".nav-list li");
 const darkOverlay = document.querySelector(".dark-overlay");
 
 /* Navbar Animations Starts */
@@ -44,6 +45,15 @@ window.addEventListener("resize", () => {
   if (window.innerWidth === 640) {
     console.log(window.innerWidth);
   }
+});
+
+listItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    console.log("Mouse entered");
+  });
+  item.addEventListener("mouseleave", () => {
+    console.log("Mouse left");
+  });
 });
 
 /* Next / Previous Buttons */
