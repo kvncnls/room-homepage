@@ -74,7 +74,6 @@ let manufactureText = {
 let textArray = [discoverText, availabilityText, manufactureText];
 
 let imgNo = 0;
-
 prevBtn.addEventListener("click", () => {
   if (imgNo == 0) {
     imgNo = 3;
@@ -87,13 +86,11 @@ prevBtn.addEventListener("click", () => {
     "hide-img",
     "show-img"
   );
-
+  imgNo -= 1;
   copy.firstElementChild.textContent =
     textArray[imgNo % textArray.length].heading;
   copy.firstElementChild.nextElementSibling.textContent =
     textArray[imgNo % textArray.length].description;
-
-  imgNo -= 1;
 });
 
 nextBtn.addEventListener("click", () => {
@@ -109,10 +106,9 @@ nextBtn.addEventListener("click", () => {
     "show-img"
   );
 
+  imgNo += 1;
   copy.firstElementChild.textContent =
     textArray[imgNo % textArray.length].heading;
   copy.firstElementChild.nextElementSibling.textContent =
     textArray[imgNo % textArray.length].description;
-
-  imgNo += 1;
 });
