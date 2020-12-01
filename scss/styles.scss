@@ -35,7 +35,7 @@ li {
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include _1440 {
+    @include _1024 {
       flex-direction: row;
     }
   }
@@ -172,10 +172,8 @@ li {
         }
       }
     }
-    .secondary-block {
-      max-width: 600px;
-    }
-    .container {
+    .secondary-block.container {
+      flex-shrink: 3;
       height: 100%;
       width: 100%;
       padding: 72px 32px;
@@ -223,13 +221,18 @@ li {
 
   .flex-block-2 {
     .product-image {
-      overflow: hidden;
       img {
-        max-width: 420px;
+        max-width: 100%;
+        flex-shrink: 3;
       }
     }
     .tertiary-block {
       padding: 56px 32px;
+      @include _1024 {
+        padding-top: 0;
+        padding-bottom: 0%;
+        flex-shrink: 1;
+      }
       .about {
         font-style: normal;
         font-weight: bold;
