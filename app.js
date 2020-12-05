@@ -1,3 +1,5 @@
+console.log("Hi there! Follow me on Twitter @kvncnls. :D");
+
 gsap.registerPlugin(ScrollTrigger);
 
 const menuBtn = document.querySelector(".menu");
